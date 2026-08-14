@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Happy Birthday</title>
+    
+    <!-- SEO Optimization -->
+    <meta name="description" content="A magical, handcrafted digital anniversary gift celebrating our beautiful journey, memories, and promises together.">
+    <meta name="robots" content="noindex, nofollow"> <!-- Privacy for couple gift -->
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons (Premium SVG Icons) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Core Theme CSS (Will use CSS Variables loaded from theme.js) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ==========================================
+         BACKGROUND CINEMATIC EFFECTS (ALIVE SKY)
+         ========================================== -->
+    <div class="sky-background">
+        <div class="stars-container" id="stars-container"></div>
+        <div class="clouds-container" id="clouds-container"></div>
+        <div class="aurora-glow"></div>
+        <div class="sparkles-container" id="sparkles-container"></div>
+    </div>
+
+    <!-- ==========================================
+         SECTION 0: THE OPENING EXPERIENCE (GIFT BOX)
+         ========================================== -->
+    <div id="opening-overlay" class="opening-overlay">
+        <!-- Blue magical light aura behind box -->
+        <div class="magical-glow" id="box-glow"></div>
+        
+        <div class="gift-container" id="gift-container">
+            <div class="gift-box" id="gift-box">
+                <!-- Ribbon & Bow -->
+                <div class="ribbon-vertical"></div>
+                <div class="ribbon-horizontal"></div>
+                <div class="satin-bow-container" id="satin-bow">
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+                </div>
+
+                <!-- Box Panels -->
+                <div class="box-lid"></div>
+                <div class="box-body"></div>
+            </div>
+            
+            <div class="click-instruction">
+                <span class="pulse-text">Tap to Open Your Gift</span>
+                <i data-lucide="chevron-down" class="instruction-arrow"></i>
+            </div>
+        </div>
+        
+        <!-- Opening transition canvas/particle container -->
+        <div class="magical-particles" id="magical-particles"></div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop preload="auto"></audio>
+
+    <!-- ==========================================
+         MAIN WEBSITE CONTENT (Initially Hidden)
+         ========================================== -->
+    <main id="main-content" class="hidden">
+        
+        <!-- Header & Music Control Bar -->
+        <header class="app-header">
+            <div class="couple-initials" id="header-initials">G&S</div>
+            <button class="music-toggle-btn" id="music-toggle" aria-label="Toggle Music">
+                <i data-lucide="music" class="icon-playing"></i>
+                <i data-lucide="music-2" class="icon-paused hidden"></i>
+            </button>
+        </header>
+
+        <!-- 1. HERO SECTION -->
+        <section id="hero-section" class="section hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title animate-up" id="hero-title">Happy Birthday</h1>
+                <p class="hero-subtitle animate-up delay-1" id="hero-subtitle">A Little Gift For You</p>
+                <div class="hero-image-wrapper animate-up delay-2">
+                    <img id="hero-image" src="" alt="Dreamy Couple Anniversary Illustration">
+                    <div class="glass-shine"></div>
+                </div>
+                <blockquote class="hero-quote animate-up delay-3" id="hero-quote">
+                    "Every moment with you became my favorite memory."
+                </blockquote>
+                <button class="btn btn-primary btn-magnet animate-up delay-4" id="hero-action-btn">
+                    <span class="btn-text" id="hero-btn-text">Open My Heart</span>
+                    <i data-lucide="heart" class="btn-icon"></i>
+                </button>
+            </div>
+        </section>
+
+        <!-- 2. RELATIONSHIP COUNTER -->
+        <section id="counter-section" class="section counter-section scroll-reveal">
+            <div class="section-container">
+                <h2 class="section-title">Since the day you were born</h2>
+                <p class="section-subtitle">Every single second has been precious</p>
+                
+                <div class="counter-grid">
+                    <div class="counter-card glass-card">
+                        <span class="counter-val" id="count-years">00</span>
+                        <span class="counter-lbl">Years</span>
+                    </div>
+                    <div class="counter-card glass-card">
+                        <span class="counter-val" id="count-months">00</span>
+                        <span class="counter-lbl">Months</span>
+                    </div>
+                    <div class="counter-card glass-card">
+                        <span class="counter-val" id="count-days">00</span>
+                        <span class="counter-lbl">Days</span>
+                    </div>
+                    <div class="counter-card glass-card">
+                        <span class="counter-val" id="count-hours">00</span>
+                        <span class="counter-lbl">Hours</span>
+                    </div>
+                    <div class="counter-card glass-card">
+                        <span class="counter-val" id="count-minutes">00</span>
+                        <span class="counter-lbl">Minutes</span>
+                    </div>
+                    <div class="counter-card glass-card">
+                        <span class="counter-val" id="count-seconds">00</span>
+                        <span class="counter-lbl">Seconds</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. OUR STORY -->
+        <section id="story-section" class="section story-section scroll-reveal">
+            <div class="section-container">
+                <div class="story-layout">
+                    <div class="story-visual">
+                        <div class="polaroid-wrapper single-polaroid floating">
+                            <img id="story-photo" src="" alt="Our story">
+                            <span class="polaroid-caption" id="story-title">Our Story</span>
+                        </div>
+                    </div>
+                    <div class="story-details">
+                        <h2 class="section-title text-left" id="story-header-title">Our Story</h2>
+                        <div class="story-divider"></div>
+                        <p class="story-paragraph" id="story-text">Loading our beautiful story...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. TIMELINE -->
+        <section id="timeline-section" class="section timeline-section scroll-reveal">
+            <div class="section-container">
+                <h2 class="section-title">Our Milestones</h2>
+                <p class="section-subtitle">Remembering the path we walked together</p>
+                
+                <div class="vertical-timeline" id="timeline-container">
+                    <!-- Dynamic timeline timeline cards inject here -->
+                    <div class="timeline-line">
+                        <div class="timeline-progress" id="timeline-progress"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. GALLERY (PINTEREST STYLE) -->
+        <section id="gallery-section" class="section gallery-section scroll-reveal">
+            <div class="section-container">
+                <h2 class="section-title">Memory Lane</h2>
+                <p class="section-subtitle">Moments frozen in time, framed with love</p>
+                
+                <div class="polaroid-gallery" id="gallery-container">
+                    <!-- Dynamic gallery items inject here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. LOVE LETTERS -->
+        <section id="letters-section" class="section letters-section scroll-reveal">
+            <div class="section-container">
+                <h2 class="section-title">Letters From My Heart</h2>
+                <p class="section-subtitle">Press to open and read what words cannot fully say</p>
+                
+                <div class="letters-grid" id="letters-container">
+                    <!-- Dynamic envelopes inject here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. REASONS I LOVE YOU -->
+        <section id="reasons-section" class="section reasons-section scroll-reveal">
+            <div class="section-container">
+                <h2 class="section-title">Why I Love You</h2>
+                <p class="section-subtitle">Just a few of the millions of reasons you make my life whole</p>
+                
+                <div class="reasons-grid" id="reasons-container">
+                    <!-- Dynamic flip cards inject here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. MUSIC PLAYER -->
+        <section id="music-section" class="section music-section scroll-reveal">
+            <div class="section-container">
+                <h2 class="section-title">Our Soundtrack</h2>
+                <p class="section-subtitle">The melody of our sweet story</p>
+                
+                <div class="music-player-wrapper glass-card">
+                    <div class="player-visual">
+                        <div class="vinyl-disc" id="vinyl-disc">
+                            <img id="music-art" src="" alt="Album Artwork">
+                            <div class="vinyl-center"></div>
+                        </div>
+                    </div>
+                    <div class="player-controls">
+                        <h3 class="track-title" id="music-title">Track Name</h3>
+                        <p class="track-artist" id="music-artist">Artist Name</p>
+                        
+                        <div class="progress-bar-container">
+                            <span class="time-stamp" id="time-current">0:00</span>
+                            <div class="progress-track" id="progress-track">
+                                <div class="progress-fill" id="progress-fill"></div>
+                                <div class="progress-handle" id="progress-handle"></div>
+                            </div>
+                            <span class="time-stamp" id="time-total">0:00</span>
+                        </div>
+                        
+                        <div class="control-buttons">
+                            <button class="player-btn" id="player-play-btn" aria-label="Play/Pause">
+                                <i data-lucide="play" class="btn-play-icon"></i>
+                                <i data-lucide="pause" class="btn-pause-icon hidden"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="volume-slider-container">
+                            <i data-lucide="volume-1" class="volume-icon"></i>
+                            <div class="volume-track" id="volume-track">
+                                <div class="volume-fill" id="volume-fill"></div>
+                            </div>
+                            <i data-lucide="volume-2" class="volume-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. PROMISE CARDS -->
+        <section id="promises-section" class="section promises-section scroll-reveal">
+            <div class="section-container">
+                <h2 class="section-title">My Promises To You</h2>
+                <p class="section-subtitle">Vows I will carry close to my soul forever</p>
+                
+                <div class="promises-grid" id="promises-container">
+                    <!-- Dynamic promise cards inject here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FINAL MESSAGE -->
+        <section id="final-section" class="section final-section">
+            <div class="section-container final-content">
+                <div class="heart-burst-container" id="heart-burst-container"></div>
+                <h2 class="final-title handwritten" id="final-title">To Many More Chapters...</h2>
+                <p class="final-text" id="final-text">Thank you for being my today, my tomorrow, and my forever.</p>
+                <div class="footer-note" id="footer-note">You & Me &copy; 2026</div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         LIGHTBOX (FULLSCREEN MEMORY LANE VIEW)
+         ========================================== -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close Lightbox">
+            <i data-lucide="x"></i>
+        </button>
+        <img class="lightbox-image" id="lightbox-image" src="" alt="Fullscreen view">
+        <p class="lightbox-caption" id="lightbox-caption">Caption</p>
+    </div>
+
+    <!-- ==========================================
+         SCRIPTS LOAD ORDER
+         ========================================== -->
+    <script src="theme.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
