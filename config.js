@@ -77,7 +77,7 @@ const CONFIG = {
         },
         {
             title: "A Promise to You",
-            text: "I promise to always respect you & love you & to never up on us , no matter how hard things get . I'll be the happiest in your happiness & you'll always see me standing behind your back whenever life is  harsh at you . Life maybe sometimes beautiful 😍 sometimes tough , sometimes confusing but the one hand that's always gonna hold you in every situation is mine ! So now you've lifetime subscription of my partnership 😜🧿"
+            text: "I promise to always respect you & love you & to never give up on us , no matter how hard things get . I'll be the happiest in your happiness & you'll always see me standing behind your back whenever life is  harsh at you . Life maybe sometimes beautiful 😍 sometimes tough , sometimes confusing but the one hand that's always gonna hold you in every situation is mine ! So now you've lifetime subscription of my partnership 😜🧿"
         },
         {
             title: "Our Quiet Magic",
